@@ -7,7 +7,7 @@ const routes = require('./app/routes');
 
 const app = express();
 const port = 8000;
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 mongoose.connect(db.url);
 var conn = mongoose.connection;

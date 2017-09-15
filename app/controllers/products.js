@@ -7,7 +7,7 @@ module.exports = function (req, res) {
   const limit = (req.query.limit)?req.query.limit: null;
 
   productService( (err, data) => {
-    if(err) {}
+    if(err) { }
     res.status(200).send({
       "status": 200,
       "total": data.length,
