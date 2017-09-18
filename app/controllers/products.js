@@ -9,6 +9,8 @@ module.exports = function (req, res) {
   let typeError = false;
   if( isNaN(minPrice) || isNaN(minPrice) || isNaN(minPrice) ) typeError = true;
 
+  res.set('Access-Control-Allow-Origin', 'http://localhost:8080');
+
   if(typeError) {
     res.status(422).json({
       "status": 422,
