@@ -19,8 +19,8 @@ module.exports = function (req, res) {
 
   productService( (err, data) => {
     if(err) {
-      res.status(503).json({
-        "status": 503,
+      res.status(422).json({
+        "status": 422,
         "error": "Database Error"
       });
       return;

@@ -13,7 +13,7 @@ module.exports = function (req, res) {
   if( typeError ) {
     res.status(422).json({
       "status": 422,
-      "error": "Invalid request body"
+      "error": "Invalid request"
     });
     return;
   }
@@ -21,8 +21,8 @@ module.exports = function (req, res) {
   cartService(req.body.item, (err, data) => {
     if(err) {
       res.status(503).json({
-        "status": 503,
-        "error": "Database Error"
+        "status": 422,
+        "error": "Invalid request"
       });
       return;
     }
