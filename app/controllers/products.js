@@ -19,13 +19,13 @@ module.exports = function (req, res) {
 
   productService( (err, data) => {
     if(err) {
-      res.status(503).send({
+      res.status(503).json({
         "status": 503,
         "error": "Database Error"
       });
       return;
     }
-    res.status(200).send({
+    res.status(200).json({
       "status": 200,
       "total": data.length,
       "result": data
